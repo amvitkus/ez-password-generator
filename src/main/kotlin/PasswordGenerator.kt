@@ -55,17 +55,21 @@ fun main() {
         'Z',
         'z'
     )
+    //Symbols for password
     val symbols: Array<Char> = arrayOf('!', '@', '#', '$', ';', '%', '&', '?', '*', '=', '+', '<', '>')
+    //Boolean to check if program is running
     var running = true
  //   var runAgain = Scanner(System.`in`)
 
 
     do {
     print("Please enter a whole number greater than 0 for your password length: ")
-    val passwordLength: Int = readLine()!!.toInt()
+    val passwordLength: Int = readLine()!!.toInt() //read password length
 
+    //1 to password length
     for (i in 1..passwordLength) {
 
+        //Generate random number between 0 and 2
         val number: Int = (0..2).random()
 
         when (number) {
