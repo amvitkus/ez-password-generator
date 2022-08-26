@@ -59,29 +59,29 @@ fun main() {
     val symbols: Array<Char> = arrayOf('!', '@', '#', '$', ';', '%', '&', '?', '*', '=', '+', '<', '>')
     //Boolean to check if program is running
     var running = true
- //   var runAgain = Scanner(System.`in`)
-
 
     do {
     print("Please enter a whole number greater than 0 for your password length: ")
     val passwordLength: Int = readLine()!!.toInt() //read password length
 
-    //1 to password length
+    //1 to password length, go through each spot in password length
     for (i in 1..passwordLength) {
 
         //Generate random number between 0 and 2
         val number: Int = (0..2).random()
 
+        //Select random letter, symbol, or number for each spot in password length
         when (number) {
             0 -> password += letters[(0..49).random()]
             1 -> password += symbols[(0..12).random()]
-            2 -> password += (0..9).random().toString()
+            2 -> password += (0..9).random().toString() //0 through 9, make it a string
         }
     }
-    //} while (running)
 
+        //Print the password
     println("Password: $password")
 
+        //Ask user to run program again
             println("Generate new password?(y/n) ")
             val runAgain = readLine()!!.toString()
 //
